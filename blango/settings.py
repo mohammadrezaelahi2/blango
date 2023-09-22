@@ -55,6 +55,7 @@ class Dev(Configuration):
         "crispy_forms",
         "crispy_bootstrap5",
         "debug_toolbar",
+        "blango_auth",
     ]
 
     MIDDLEWARE = [
@@ -197,6 +198,8 @@ class Dev(Configuration):
     }
 
     INTERNAL_IPS = ["192.168.10.226"]
+
+    AUTH_USER_MODEL = "blango_auth.User"
 
 
 class Prod(Dev):
