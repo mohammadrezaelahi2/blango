@@ -25,6 +25,7 @@ import blog.views
 import blango_auth.views
 
 urlpatterns = [
+  path("api/v1/", include("blog.api_urls")),
     path('admin/', admin.site.urls),
     path("post/<slug>/", blog.views.post_detail, name="blog-post-detail"),
     path("", blog.views.index),
