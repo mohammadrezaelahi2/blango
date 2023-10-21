@@ -56,4 +56,10 @@ urlpatterns += [
     ),
 
     path("", include(router.urls)), # -- 2 - 4 - 2 --
+
+    path(
+        "posts/by-time/<str:period_name>/",
+        PostViewSet.as_view({"get": "list"}),
+        name="posts-by-time",
+    ),
 ]
