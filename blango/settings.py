@@ -70,6 +70,7 @@ class Dev(Configuration):
         "allauth.socialaccount.providers.google",
 
         "django_filters",
+        "versatileimagefield",
     ]
 
     MIDDLEWARE = [
@@ -160,6 +161,10 @@ class Dev(Configuration):
     # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
     STATIC_URL = '/static/'
+
+
+    MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = "/media/"
 
     # Default primary key field type
     # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
