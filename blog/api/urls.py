@@ -13,6 +13,9 @@ from drf_yasg import openapi   # for swagger course 2 - week 4 - Browsable API
 from drf_yasg.views import get_schema_view   # for swagger course 2 - week 4 - Browsable API
 import os   # for swagger course 2 - week 4 - Browsable API
 
+# jwt c 3 - w 3 - m 2
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 # for swagger course 2 - week 4 - Browsable API
 schema_view = get_schema_view(
     openapi.Info(
@@ -42,6 +45,11 @@ urlpatterns = format_suffix_patterns(urlpatterns)
 urlpatterns += [
     path("auth/", include("rest_framework.urls")),
     path("token-auth/", views.obtain_auth_token),
+
+
+    # jwt c 3 - w 3 - m 2
+    path("jwt/", TokenObtainPairView.as_view(), name="jwt_obtain_pair"),
+    path("jwt/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"),
 
     # for swagger course 2 - week 4 - Browsable API
     re_path(
