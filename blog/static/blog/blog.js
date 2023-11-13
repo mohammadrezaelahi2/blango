@@ -1,21 +1,46 @@
-alert('Hello, world!')
-const framework = 'Django'
-const language = 'Python'
-alert(framework + ' is written in ' + language)
-const name = 'Ben'
-let benCount = 0
-if (name === 'Ben') {
-    benCount = 1
+function sayHello(yourName) {
+  if (yourName === undefined) {
+      console.log('Hello, no name')
+  } else {
+       console.log('Hello, ' + yourName)
+  }
 }
 
-alert('There is ' + benCount + ' Ben')
+const yourName = 'MRE'  // Put your name here
 
-const theNumber = 1
-let yourName = 'MRE'
+console.log('Before setTimeout')
 
-if (theNumber === 1) {
-  yourName = 'MRE2'
-  alert(yourName)
+setTimeout(() => {
+    sayHello(yourName)
+  }, 10000
+)
+
+console.log('After setTimeout')
+
+for(let i = 0; i < 10; i += 1) {
+  console.log('for loop i: ' + i)
 }
 
-alert(yourName)
+let j = 0
+while(j < 10) {
+  console.log('while loop j: ' + j)
+  j += 1
+}
+
+let k = 10
+
+do {
+  console.log('do while k: ' + k)
+} while(k < 10)
+
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+numbers.forEach((value => {
+  console.log('For each value ' + value)
+}))
+
+const doubled = numbers.map(value => value * 2)
+
+console.log('Here are the doubled numbers')
+
+console.log(doubled)
